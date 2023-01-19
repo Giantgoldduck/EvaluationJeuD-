@@ -13,27 +13,28 @@ let player1Score = 0;
 let player2Score = 0;
 let roundScore = 0;
 
-// Ajout d'évènement
+// Ajout d'évènement.
 rollButton.addEventListener("click", rollDice);
 holdButton.addEventListener("click", hold);
 newGameButton.addEventListener("click", newGame);
 
-//fonction qui lance le dé et qui donne la possibilité de Roll Dice ou Hold
+//Lance le dé et affiche le résultat, 1 = manche perdue.
 function rollDice() {
     const diceRoll = Math.min(Math.floor(Math.random() * 6) + 1, 6);
     if (diceRoll === 1) {
       roundScore = 0;
-      alert('vous avez fait 1, vous avez perdu la manche !')
+      document.getElementById("result").innerHTML = `You lost the round. `;
+      alert('You did 1, you lost the round');
       switchPlayer();
     } else {
       roundScore += diceRoll; 
-      document.getElementById("result").innerHTML = `Vous avez fait ${diceRoll}`;
+      document.getElementById("result").innerHTML = `<strong>You did ${diceRoll} !</strong>`;
       updateRoundScore();
     }
   }
 
-
-function hold() {
+//pose le score, si le score >= 100 = victoire.
+ hold = _ => {
   if (currentPlayer === 1) {
     player1Score += roundScore;
     updateTotalScore(player1Total, player1Score);
@@ -48,18 +49,22 @@ function hold() {
       alert("Player 2 wins!");
       newGame();
     }
-  }
+  } 
+  //remet à 0 après le changement de joueur.
   roundScore = 0;
   result.textContent = "";
   switchPlayer();
 }
 
-function switchPlayer() {
+//changement de joueur.
+switchPlayer = _ => {
   currentPlayer = currentPlayer === 1 ? 2 : 1;
+  document.getElementById("currentPlayer").innerHTML = `<strong>Player ${currentPlayer}'s turn</strong>`;
   updateRoundScore();
 }
 
-function updateRoundScore() {
+// affichage score en cours.
+updateRoundScore = _ => {
   if (currentPlayer === 1) {
     player1Round.textContent = roundScore;
   } else {
@@ -67,11 +72,13 @@ function updateRoundScore() {
   }
 }
 
-function updateTotalScore(element, score) {
+//update et affiche le score total. 
+updateTotalScore = (element, score) => {
   element.textContent = score;
 }
 
-function newGame() {
+//Affichage à 0 pour new game.
+newGame = _ => {
     currentPlayer = 1;
     player1Score = 0;
     player2Score = 0;
@@ -83,8 +90,3 @@ function newGame() {
     result.textContent = 0;
   }
   
-
-
-  //  changer le mot function par une fonction fléchée EMS6
-  // rajouter du style CSS
-  // vérifier si tout es ok
