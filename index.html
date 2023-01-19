@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <title>DéMaster</title>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to DéMaster !</h1>
+    <div>New game</div>
+</header>
+
+<main>
+    <div id="player1">
+        <p>Player 1</p>
+        <p>Round Score: <span id="player1Round"></span></p>
+        <p>Total Score: <span id="player1Total"></span></p>
+    </div>
+  
+<p id="result">Vous avez fait : </p>
+
+    <div id="player2">
+        <p>Player 2</p>
+        <p>Round Score: <span id="player2Round"></span></p>
+        <p>Total Score: <span id="player2Total"></span></p>
+    </div>
+  
+    <button id="roll" onclick="diceRoll()">Roll Dice</button>
+    <button id="hold">Hold</button>
+    <button id="newGame">New Game</button>
+</main>  
+
+
+<script src="script.js"></script>
+</body>
+</html>
