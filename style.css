@@ -5,20 +5,24 @@
     font-family: 'Lato';
     color: #dddef6 ;
 }
+
 body {
     height: 100vh;
     background: linear-gradient(to right, #17294f 50%, #140f07 50%);
     background-size: 100% 100%;
     position: relative;
 }
-/****************header***********************/
+
+                                          /****************header**********************************/
 header {
     text-align: center;
 }
+
 .newGame {
     margin-top: 10px;
     font-size: 1.5rem;
 }
+
 .playerturn {
     font-size: 2rem;
     position: absolute;
@@ -26,19 +30,17 @@ header {
     margin-left: -100px;
 }
 
-/**************Main*******************/
+                                          /****************Main************************************/
 
 /*************** score du player ************************/
 .player1roll, .player2roll {
     font-size: 8rem;
     color: #475bae;
-    ease-in: 2sec;
 }
 
 
+                                           /******bootstrap card*****/
 
-
-/******bootstrap card*****/
 /******Le float left et right des 2 cards  (player 1 et player 2) sont sur HTML****/
 .card {
     width: 50%;
@@ -74,7 +76,7 @@ header {
     margin-left: -175px;
 }
 
-/**Bouton couleur bordure**/
+/**Bouton couleur bordure  "Roll Dice" et "Hold"**/
 button {
 border: none;
 background: none;
